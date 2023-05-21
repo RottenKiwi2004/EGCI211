@@ -26,8 +26,6 @@ void selectionSort(vector<int> &v) {
 				mn = j;
 
 		// Swap min to the first position of unsorted part
-		int temp = v[mn];
-		v[mn] = v[i];
-		v[i] = temp;
+		swap(v[mn], v[i]);
 	}
 }

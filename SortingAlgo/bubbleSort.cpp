@@ -19,9 +19,7 @@ void bubbleSort() {
 	for(int i=0;i<v.size();i++) {
 		for(int j=i; j<v.size(); j++) {
 			if(v[i] > v[j]) {
-				int temp  = v[i];
-				v[i] = v[j];
-				v[j] = temp;
+				swap(v[i], v[j]);
 			}
 		}
 	}
