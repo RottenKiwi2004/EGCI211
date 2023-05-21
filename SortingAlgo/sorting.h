@@ -4,6 +4,7 @@
 
 void initialiseVector(std::vector<int> &v);
 void printVector(std::vector<int> &v);
+void swap(int &a, int &b);
 
 void initialiseVector(std::vector<int> &v) {
 	for(int i=0;i<20;i++)
@@ -16,7 +17,8 @@ void printVector(std::vector<int> &v) {
 	std::cout << std::endl;
 }
 
-/*
-Remove element at index n
-vec.erase(next(vec.begin(), n));
-*/
+void swap(int &a, int &b) {
+	int temp = a;
+	a = b;
+	b = temp;
+}
