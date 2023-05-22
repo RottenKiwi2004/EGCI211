@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector <int> v;
+vector<int> v;
 
 void bubbleSort();
 
@@ -15,12 +15,10 @@ int main()
 	printVector(v);
 }
 
-void bubbleSort() {
-	for(int i=0;i<v.size();i++) {
-		for(int j=i; j<v.size(); j++) {
-			if(v[i] > v[j]) {
+void bubbleSort()
+{
+	for (int i = 0; i < v.size(); i++)
+		for (int j = i; j < v.size(); j++)
+			if (v[i] > v[j])
 				swap(v[i], v[j]);
-			}
-		}
-	}
 }

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector <int> v;
+vector<int> v;
 
 void selectionSort(vector<int> &);
 
@@ -15,14 +15,15 @@ int main()
 	printVector(v);
 }
 
-
-void selectionSort(vector<int> &v) {
-	for(int i=0;i<v.size();i++) {
+void selectionSort(vector<int> &v)
+{
+	for (int i = 0; i < v.size(); i++)
+	{
 
 		// Find min index of the remaining unsorted element
-    int mn = i;
-		for(int j=i;j<v.size();j++)
-			if(v[mn] > v[j])
+		int mn = i;
+		for (int j = i; j < v.size(); j++)
+			if (v[mn] > v[j])
 				mn = j;
 
 		// Swap min to the first position of unsorted part
