@@ -23,7 +23,7 @@ void quickSort(vector<int> &v)
         return;
 
     // Pick the middle element in the array
-    int pivotIdx = v.size() / 2;
+    int pivotIdx = v.size() - 1;
 
     vector<int> left, right;
 
