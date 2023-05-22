@@ -5,17 +5,17 @@ using namespace std;
 
 vector<int> v;
 
-void bubbleSort();
+void bubbleSort(vector<int> &);
 
 int main()
 {
 	initialiseVector(v);
 	printVector(v);
-	bubbleSort();
+	bubbleSort(v);
 	printVector(v);
 }
 
-void bubbleSort()
+void bubbleSort(vector<int> &v)
 {
 	for (int i = 0; i < v.size(); i++)
 		for (int j = i; j < v.size(); j++)
