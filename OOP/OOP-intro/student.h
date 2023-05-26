@@ -14,7 +14,7 @@ class student{
 
 };
 
-void student::set_name(string name) {
+void student::set_name(string name = "An unnamed student") {
 	this->name = name;
 }
 
