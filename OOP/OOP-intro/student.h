@@ -7,6 +7,9 @@ class student{
 
 		void set_age(int);
 		int get_age();
+		void print_age();
+
+		void print_all();
 
 	private:
 
@@ -20,12 +23,12 @@ void student::set_name(string name = "An unnamed student") {
 	this->name = name;
 }
 
-void student::print_name() {
-	cout << this->name << endl;
-}
-
 string student::get_name() {
 	return this->name;
+}
+
+void student::print_name() {
+	cout << this->name << endl;
 }
 
 void student::set_age(int age) {
@@ -34,4 +37,13 @@ void student::set_age(int age) {
 
 int student::get_age() {
 	return this->age;
+}
+
+void student::print_age() {
+	cout << this->age << endl;
+}
+
+void student::print_all() {
+	this->print_name();
+	this->print_age();
 }
