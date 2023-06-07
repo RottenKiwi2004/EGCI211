@@ -12,7 +12,7 @@ private:
 	bool isDead = false;
 
 public:
-	Monster(string, int = 20, int = 0);
+	Monster(string, int, int);
 	void print(); // to print all data
 	void operator++();
 	void operator+=(int);
@@ -25,7 +25,7 @@ public:
 	void getKilled();
 };
 
-Monster::Monster(string name = getRandomName(), int hp, int potion)
+Monster::Monster(string name = getRandomName(), int hp = 20, int potion = 0)
 {
 	// set all values
 	this->name = name;
