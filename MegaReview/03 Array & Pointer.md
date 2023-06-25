@@ -100,3 +100,25 @@ int main()
 ```
 
 Ref: _[arrayPointer2.cpp](./Code/arrayPointer2.cpp)_
+
+## What is the output of this program (when run with this bash command)
+
+```cpp
+// compile to ./a.exe
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    for (int i = 1; i < argc; i++)
+        cout << *(*(argv + i) + 1) << endl;
+}
+```
+
+Ref: _[argvPtr.cpp](./Code/argvPtr.cpp)_
+
+### Bash:
+
+```bash
+./a.exe Hello World! Welcome to my program
+```
