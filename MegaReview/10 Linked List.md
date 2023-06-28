@@ -17,12 +17,18 @@
 ```cpp
 class LinkedList {
 public:
-    Node * root = NULL;
+    Node * head = NULL;
     Node * tail = NULL;
     void insertBack(int n);
     void insertFront(int n);
     void printAll();
 };
+```
+
+```mermaid
+graph LR;
+    HEAD-->NULL;
+    TAIL-->NULL;
 ```
 
 ## Implementation of inserting to the back
@@ -33,8 +39,11 @@ void LinkedList::insertBack(int n)
     Node *node = new Node(n);
     if (head == NULL)
         head = tail = node;
-    tail->next = node;
-    tail = node;
+    else
+    {
+        tail->next = node;
+        tail = node;
+    }
 }
 ```
 

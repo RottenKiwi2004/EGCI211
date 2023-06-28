@@ -30,8 +30,11 @@ void LinkedList::insertBack(int n)
     Node *node = new Node(n);
     if (head == NULL)
         head = tail = node;
-    tail->next = node;
-    tail = node;
+    else
+    {
+        tail->next = node;
+        tail = node;
+    }
 }
 
 void LinkedList::insertFront(int n)
