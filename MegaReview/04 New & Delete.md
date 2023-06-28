@@ -14,6 +14,11 @@ int main()
 }
 ```
 
+```mermaid
+graph TD
+5
+```
+
 Ref: _[new1.cpp](./Code/new1.cpp)_
 
 The code shown above can be run and it does take space in RAM, but we cannot reference back to that address.
@@ -31,6 +36,11 @@ int main()
     cout << *p << endl;
     cout << *p + 1 << endl;
 }
+```
+
+```mermaid
+graph LR
+p-->5
 ```
 
 Ref: _[new2.cpp](./Code/new2.cpp)_

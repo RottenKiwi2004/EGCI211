@@ -12,6 +12,11 @@ Because array is already a pointer, don't put `&` in front of `a` when when assi
 int *p = a;
 ```
 
+```cpp
+int *p;
+p = a;
+```
+
 Another way to do this is to use the address of the first index
 
 ```cpp
@@ -20,10 +25,20 @@ int *p = &a[0];
 
 The result looks like this:
 
-| array   | 15  | 45  | 70  | 96  |
-| ------- | --- | --- | --- | --- |
-| index   | 0   | 1   | 2   | 3   |
-| pointer | p   | p+1 | p+2 | p+3 |
+```mermaid
+graph TD;
+
+a-->0xac
+subgraph array[Array]
+    0xac[a0: 15];
+    0xad[a1: 45];
+    0xae[a2: 70];
+    0xaf[a3: 96];
+end;
+
+p[p: 0xac]-->0xac
+
+```
 
 ```cpp
 *(p+1) == a[1] // true
@@ -56,6 +71,19 @@ int main()
     for (int i = 0; i < SIZE; i++)
         cout << *p + i << endl;
 }
+```
+
+```mermaid
+graph TD;
+subgraph a;
+    0xac[a0: 15];
+    0xad[a1: 45];
+    0xae[a2: 70];
+    0xaf[a3: 96];
+end;
+
+p[p: 0xac]-->0xac
+
 ```
 
 Ref: _[arrayPointer.cpp](./Code/arrayPointer.cpp)_

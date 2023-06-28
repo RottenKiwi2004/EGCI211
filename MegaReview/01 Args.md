@@ -12,17 +12,22 @@ int main(int argc, char * argv[]) {
 ./a.exe 1 2 3 4 5 Hello World
 ```
 
-```cpp
-argc => 8
+```mermaid
 
-argv[0] => "./a.exe"
-argv[1] => "1"
-argv[2] => "2"
-argv[3] => "3"
-argv[4] => "4"
-argv[5] => "5"
-argv[6] => "Hello"
-argv[7] => "World"
+graph TD;
+subgraph argv
+    0[./a.exe]
+    1[1]
+    2[2]
+    3[3]
+    4[4]
+    5[5]
+    6[Hello]
+    7[World]
+end
+a[7]---7
+
+
 ```
 
 ## "Simple" Program to print all `argv`
