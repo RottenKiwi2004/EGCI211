@@ -42,24 +42,22 @@ int bracket(string str) {
 }
 
 int main(int argc, char * argv[]) {
-	string str = "";
 
 	// cin >> str;
 	for(int i=1;i<argc;i++)
-		str += string(argv[i]);
 
-	switch(bracket(str)) {
-		case 0:
-			cout << "Correct" << endl;
-			break;
-		case 1:
-			cout << "Too many opening brackets" << endl;
-			break;
-		case -1:
-			cout << "Too many closing brackets" << endl;
-			break;
-		case 2147483647:
-			cout << "Wrong match" << endl;
-			break;
-	}
+		switch(bracket(argv[i])) {
+			case 0:
+				cout << "Correct" << endl;
+				break;
+			case 1:
+				cout << "Too many opening brackets" << endl;
+				break;
+			case -1:
+				cout << "Too many closing brackets" << endl;
+				break;
+			case 2147483647:
+				cout << "Wrong match" << endl;
+				break;
+		}
 }
