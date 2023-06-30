@@ -15,7 +15,7 @@ bool correctPair(char a, char b) {
 	return false;
 }
 
-bool bracket(string str) {
+int bracket(string str) {
 	Stack stack;
 	for(int i=0;i<str.size();i++) {
 		switch(str[i]) {
@@ -28,16 +28,17 @@ bool bracket(string str) {
 			case ')':
 			case ']':
 			case '}':
-				if(stack.empty()) return false;
+				// Too many closing
+				if(stack.empty()) return -1;
 				char top = stack.getTop();
 				stack.pop();
-				if(!correctPair(top, str[i])) return false;
+				// Wrong match
+				if(!correctPair(top, str[i])) return 2147483647;
 				break;
-			default:
-				continue;
 		}
 	}
-	return stack.empty();
+	// 1 Too many opening; 0 Correct
+	return (int)(!stack.empty());
 }
 
 int main(int argc, char * argv[]) {
@@ -47,5 +48,18 @@ int main(int argc, char * argv[]) {
 	for(int i=1;i<argc;i++)
 		str += string(argv[i]);
 
-	cout << (bracket(str) ? "Correct" : "Incorrect") << endl;
+	switch(bracket(str)) {
+		case 0:
+			cout << "Correct" << endl;
+			break;
+		case 1:
+			cout << "Too many opening brackets" << endl;
+			break;
+		case -1:
+			cout << "Too many closing brackets" << endl;
+			break;
+		case 2147483647:
+			cout << "Wrong match" << endl;
+			break;
+	}
 }

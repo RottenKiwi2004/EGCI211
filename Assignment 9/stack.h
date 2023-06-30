@@ -37,7 +37,7 @@ void Stack::push(int n) {
 void Stack::pop() {
 	if(this->top == NULL) return;
 	
-	cout << "Popping: " << this->top->value << endl;
+	// cout << "Popping: " << this->top->value << endl;
 
 	Node * temp = this->top;
 	this->top = this->top->next;
