@@ -1,6 +1,7 @@
 # `Subject * subj;`
 
 ```cpp
+Subject * subj;
 Subject advProg("Advanced Programming");
 subj = &advProg;
 subj->isHard = false;
