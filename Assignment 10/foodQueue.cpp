@@ -16,7 +16,19 @@ int main(int argc, char * argv[]) {
 	for(int i = 1; i < argc; i+= (argv[i][0] == 'x' ? 1 : 2)) {
 		if(argv[i][0] == 'x')
 			if(q.front() == 0) cout << (q.dequeue() || true ? "No food": "") << endl;
-			else cout << "Customer " << customer++ << " has to pay " << q.dequeue() << endl;
+			else {
+				int price = q.dequeue();
+				cout << "Customer " << customer++ << " has to pay " << price << endl;
+				int cash;
+				do {
+					cout << "Cash: ";
+					cin >> cash;
+				} while(cash < price);
+				if(cash - price) {
+					cout << "Change is: " << cash - price << endl;
+				}
+			}
+			
 		else {
 			int order = atoi(argv[i]);
 			int quantity = atoi(argv[i+1]);
