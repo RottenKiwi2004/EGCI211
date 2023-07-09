@@ -19,7 +19,7 @@ public:
 
 int main()
 {
-    Clock clock;
+    Clock clock(7);
     while (true)
     {
         switch (getch())

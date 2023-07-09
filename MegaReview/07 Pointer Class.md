@@ -8,6 +8,11 @@ subj->isHard = false;
 subj->printDetail();
 ```
 
+```mermaid
+graph LR
+subj-->advProg
+```
+
 When class is a pointer, not normal variable, instead of accessing members of that class by `.` (dot operator), we have use `->` (arrow operator)
 
 From the code above, `subj` is a pointer, but `advProg` is a normal variable.

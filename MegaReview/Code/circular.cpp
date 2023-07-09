@@ -22,7 +22,7 @@ public:
     Node *tail = NULL;
     void insertBack(int n);
     void insertFront(int n);
-    void printAll();
+    void printAll(int = 1);
 };
 
 void LinkedList::insertBack(int n)
@@ -33,6 +33,7 @@ void LinkedList::insertBack(int n)
     else
     {
         tail->next = node;
+        node->next = head;
         tail = node;
     }
 }
@@ -42,23 +43,35 @@ void LinkedList::insertFront(int n)
     Node *node = new Node(n);
     if (head == NULL)
         head = tail = node;
-    node->next = head;
-    head = node;
+    else
+    {
+        node->next = head;
+        tail->next = node;
+        head = node;
+    }
 }
 
-void LinkedList::printAll()
+void LinkedList::printAll(int loops)
 {
-    for (Node *temp = head; temp != NULL; temp = temp->next)
-        cout << temp->value << " -> ";
+    if (head != NULL)
+    {
+        if (head == tail)
+            cout << head->value << " -> ";
+        else
+            for (Node *temp = head; temp != head || loops--; temp = temp->next)
+                cout << temp->value << " -> ";
+    }
     cout << "X" << endl;
 }
 
 int main()
 {
     LinkedList ll;
+
     ll.printAll();
     ll.insertBack(40);
     ll.printAll();
+    cout << "Test" << endl;
     ll.insertBack(50);
     ll.printAll();
     ll.insertBack(60);
@@ -68,5 +81,5 @@ int main()
     ll.insertFront(20);
     ll.printAll();
     ll.insertFront(10);
-    ll.printAll();
+    ll.printAll(3);
 }

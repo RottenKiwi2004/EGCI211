@@ -13,7 +13,7 @@ public:
 ```mermaid
 graph LR;
 
-    0x01[Value: 5]-->NULL[ ];
+    0x01[Value: 5]-->0x02;
     0x02[Value: 7]-->NULL[ ];
 
 ```

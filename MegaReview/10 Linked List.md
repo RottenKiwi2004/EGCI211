@@ -27,8 +27,10 @@ public:
 
 ```mermaid
 graph LR;
-    HEAD-->NULL;
-    TAIL-->NULL;
+    HEAD-->0x04;
+    TAIL-->0x03;
+    0x01[1]-->0x02[2]-->0x03[3]
+    0x04[4]-->0x01
 ```
 
 ## Implementation of inserting to the back
@@ -128,7 +130,7 @@ void LinkedList::insert(int n)
         return;
     }
 
-    // More than two elements
+    // More than one element
     Node *temp = head;
     while (temp->next != NULL && temp->next->value < n)
         temp = temp->next;

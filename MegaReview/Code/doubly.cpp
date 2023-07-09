@@ -7,6 +7,7 @@ class Node
 public:
     int value;
     Node *next = NULL;
+    Node *prev = NULL;
     Node(int n);
 };
 
@@ -23,6 +24,7 @@ public:
     void insertBack(int n);
     void insertFront(int n);
     void printAll();
+    void printRev();
 };
 
 void LinkedList::insertBack(int n)
@@ -33,6 +35,7 @@ void LinkedList::insertBack(int n)
     else
     {
         tail->next = node;
+        node->prev = tail;
         tail = node;
     }
 }
@@ -42,14 +45,25 @@ void LinkedList::insertFront(int n)
     Node *node = new Node(n);
     if (head == NULL)
         head = tail = node;
-    node->next = head;
-    head = node;
+    else
+    {
+        node->next = head;
+        head->prev = node;
+        head = node;
+    }
 }
 
 void LinkedList::printAll()
 {
     for (Node *temp = head; temp != NULL; temp = temp->next)
-        cout << temp->value << " -> ";
+        cout << temp->value << " <-> ";
+    cout << "X" << endl;
+}
+
+void LinkedList::printRev()
+{
+    for (Node *temp = tail; temp != NULL; temp = temp->prev)
+        cout << temp->value << " <-> ";
     cout << "X" << endl;
 }
 
@@ -69,4 +83,6 @@ int main()
     ll.printAll();
     ll.insertFront(10);
     ll.printAll();
+
+    ll.printRev();
 }

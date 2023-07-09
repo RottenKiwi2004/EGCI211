@@ -4,6 +4,12 @@
 
 Constructor and Destructor are just methods that are called automatically when creating / deleting the class.
 
+```cpp
+Clock clock;
+
+Clock * clk = new Clock();
+```
+
 ## Usage?
 
 Usually, this is used to set the initial state of that class or free up the memory when we are done with that class.

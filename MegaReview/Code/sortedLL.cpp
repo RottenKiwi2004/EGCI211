@@ -15,6 +15,7 @@ public:
     Node *head = NULL;
     void insert(int n);
     void printAll();
+    void remove(int n);
 };
 
 void LinkedList::insert(int n)
@@ -52,12 +53,38 @@ void LinkedList::printAll()
     cout << "X" << endl;
 }
 
+void LinkedList::remove(int n)
+{
+    Node *temp = head;
+    while (temp->next != NULL && temp->next->value != n)
+        temp = temp->next;
+
+    Node *temp2 = temp->next;
+    temp->next = temp->next->next;
+    delete temp2;
+}
+
 int main(int argc, char *argv[])
 {
     LinkedList ll;
-    for (int i = 1; i < argc; i++)
-    {
-        ll.insert(atoi(argv[i]));
-        ll.printAll();
-    }
+    // for (int i = 1; i < argc; i++)
+    // {
+    ll.insert(1);
+    ll.printAll();
+    ll.insert(3);
+    ll.printAll();
+    ll.insert(5);
+    ll.printAll();
+    ll.insert(2);
+    ll.printAll();
+    ll.insert(7);
+    ll.printAll();
+    ll.insert(6);
+    ll.printAll();
+
+    ll.remove(3);
+    ll.printAll();
+    ll.insert(4);
+    ll.printAll();
+    // }
 }
