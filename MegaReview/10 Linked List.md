@@ -29,8 +29,11 @@ public:
 graph LR;
     HEAD-->0x04;
     TAIL-->0x03;
+    subgraph Linked List
+        
     0x01[1]-->0x02[2]-->0x03[3]
     0x04[4]-->0x01
+    end
 ```
 
 ## Implementation of inserting to the back
@@ -153,3 +156,7 @@ int main(int argc, char *argv[])
 ```
 
 Ref: _[sortedLL.cpp](./Code/sortedLL.cpp)_
+
+
+Try writing doubly linked list:
+
